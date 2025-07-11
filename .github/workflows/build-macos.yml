@@ -23,6 +23,10 @@ jobs:
         run: npm install
         working-directory: scenarist
 
+      - name: Fix electron-builder permissions
+        run: chmod +x ./node_modules/.bin/electron-builder
+        working-directory: scenarist
+
       - name: Build Electron app for macOS
         run: npm run build
         working-directory: scenarist
