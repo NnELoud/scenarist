@@ -38,12 +38,14 @@ jobs:
         run: npm run build
 
       - name: Upload DMG artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: scenarist-mac-dmg
           path: dist/*.dmg
 
       - name: Upload ZIP artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: scenarist-mac-zip
