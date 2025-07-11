@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Move project files to root
+        run: |
+          shopt -s dotglob
+          mv scenarist/* .
+          rm -rf scenarist
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -21,28 +27,24 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: scenarist
 
       - name: Fix electron-builder permissions
         run: chmod +x ./node_modules/.bin/electron-builder
-        working-directory: scenarist
 
       - name: Fix app-builder permissions
         run: chmod +x ./node_modules/app-builder-bin/mac/*
-        working-directory: scenarist
 
       - name: Build Electron app for macOS
         run: npm run build
-        working-directory: scenarist
 
       - name: Upload DMG artifact
         uses: actions/upload-artifact@v4
         with:
           name: scenarist-mac-dmg
-          path: scenarist/dist/*.dmg
+          path: dist/*.dmg
 
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
           name: scenarist-mac-zip
-          path: scenarist/dist/*.zip
+          path: dist/*.zip
