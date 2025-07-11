@@ -28,7 +28,7 @@ jobs:
         working-directory: scenarist
 
       - name: Fix app-builder permissions
-        run: chmod +x ./node_modules/app-builder-bin/mac/app-builder_arm64
+        run: chmod +x ./node_modules/app-builder-bin/mac/*
         working-directory: scenarist
 
       - name: Build Electron app for macOS
