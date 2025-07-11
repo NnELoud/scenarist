@@ -1,0 +1,45 @@
+{
+  "name": "scenarist",
+  "version": "1.0.0",
+  "description": "Приложение для создания сценариев с заметками и связями",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "electron",
+    "scenario",
+    "notes"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "style-loader": "^4.0.0"
+  },
+  "build": {
+    "appId": "com.yourcompany.scenarist",
+    "productName": "Scenarist",
+    "mac": {
+      "target": ["dmg", "zip"]
+    },
+    "win": {
+      "target": ["nsis", "zip"]
+    },
+    "files": [
+      "**/*",
+      "!dist/win-unpacked/**",
+      "!dist/*.yml"
+    ]
+  }
+}

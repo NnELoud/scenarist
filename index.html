@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сценарист</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>Сценарист</h1>
+            <div class="toolbar">
+                <button id="newNote" class="btn">Новая заметка</button>
+                <button id="connectNotes" class="btn" disabled>Связать заметки</button>
+                <button id="saveScenario" class="btn">Сохранить</button>
+                <button id="loadScenario" class="btn">Открыть</button>
+                <button id="toggleTheme" class="btn">Тема</button>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div id="workspace" class="workspace"></div>
+        </main>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html> 
